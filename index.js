@@ -26,7 +26,7 @@ app.post('/send-message', async (req, res) => {
 
     return res.status(200).json({ success: true, result: response.data });
   } catch (error) {
-    console.error('Telegramga yuborishda xatolik:', error.response?.data || error.message);
+    console.error('Telegramga yuborishda xatolik new :', error.response?.data || error.message);
     return res.status(500).json({ error: 'Xabar yuborilmadi.' });
   }
 });
