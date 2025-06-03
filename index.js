@@ -24,9 +24,9 @@ app.post('/send-message', async (req, res) => {
       parse_mode: 'Markdown',
     });
 
-    return res.status(200).json({ success: true, result: response.data });
+    return res.status(200).json({ success: true, result: response.data.text });
   } catch (error) {
-    console.error(`Telegramga yuborishda xatolik new ${process.env.CHAT_ID} ${process.env.BOT_TOKEN}:`, error.response?.data || error.message);
+    console.error(`Telegramga yuborishda xatolik`, error.response?.data || error.message);
     return res.status(500).json({ error: 'Xabar yuborilmadi.' });
   }
 });
